@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/tema"
+    tools:context=".NextBooking1">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:id="@+id/li_harga"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/underline">
+        <com.example.azizainun.maps.MyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="10pt"
+            android:text="Harga" />
+        <com.example.azizainun.maps.MyTextView
+            android:id="@+id/harga_booked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="12pt"
+            android:textStyle="bold"
+            android:text=""/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/li_tanggal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/underline"
+        android:orientation="horizontal"
+        android:layout_below="@id/li_harga">
+        <com.example.azizainun.maps.MyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="10pt"
+            android:text="Tanggal"/>
+        <com.example.azizainun.maps.MyTextView
+            android:id="@+id/tanggal_booked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="12pt" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lin_tamu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/underline"
+        android:orientation="horizontal"
+        android:layout_below="@id/li_tanggal">
+        <com.example.azizainun.maps.MyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="10pt"
+            android:text="Jumlah Tamu"/>
+        <NumberPicker
+            android:id="@+id/tamu_picker"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:textSize="12pt"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lin_namatamu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/underline"
+        android:orientation="vertical"
+        android:layout_below="@id/lin_tamu">
+        <com.example.azizainun.maps.MyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="10pt"
+            android:text="Nama Wakil Tamu"/>
+        <EditText
+            android:id="@+id/nama_wakil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""
+            android:textSize="10pt"/>
+    </LinearLayout>
+    <!--<com.example.azizainun.maps.MyTextView
+        android:id="@+id/rek"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:textSize="10pt"
+        android:text="Pembayaran dilakukan ke rekening \n12345678\natas nama CV Transzit"
+        android:textStyle="normal"
+        android:gravity="center_horizontal"
+        android:layout_below="@id/li_tanggal" />-->
+
+    <com.example.azizainun.maps.MyTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/confirm_book"
+        android:layout_alignParentStart="true"
+        android:layout_margin="20dp"
+        android:gravity="center_horizontal"
+        android:text="Pembayaran maksimal dilakukan dalam 3 hari. jika melebihi 3 hari. maka akan dibatalkan secara otomatis"
+        android:textSize="9pt"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/confirm_book"
+        android:text="konfirmasi"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/ripple_button_normal"/>
+</RelativeLayout>

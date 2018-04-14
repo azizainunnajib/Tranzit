@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/tema">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:id="@+id/editgambar_editprofil"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:id="@+id/gambarprofil_editprofil"
+        android:src="@drawable/foto_person"/>
+    <com.example.azizainun.maps.MyTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="change picture"
+        android:layout_below="@+id/gambarprofil_editprofil"
+        android:textSize="6pt"
+        android:textStyle="bold"
+        android:gravity="center_horizontal"/>
+</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp">
+        <com.example.azizainun.maps.MyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Nama"
+            android:id="@+id/nama_editprofil0"
+            android:layout_weight="2"
+            android:textStyle="bold"
+            android:layout_alignBaseline="@+id/nama_editprofil1"
+            android:layout_alignBottom="@+id/nama_editprofil1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:id="@+id/nama_editprofil1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:gravity="right"
+            android:layout_alignLeft="@+id/nama_editprofil0"
+            android:inputType="textCapWords"
+            android:backgroundTint="@color/transparant"
+            android:hint="Nama"
+            android:ems="13"
+            android:layout_weight="1"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5sp">
+        <com.example.azizainun.maps.MyTextView
+            android:id="@+id/email_editprofil0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Email"
+            android:textStyle="bold"
+            android:layout_weight="2"
+            android:layout_alignBaseline="@+id/email_editprofil1"
+            android:layout_alignBottom="@+id/email_editprofil1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:id="@+id/email_editprofil1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:gravity="right"
+            android:backgroundTint="@color/transparant"
+            android:inputType="textEmailAddress"
+            android:ems="13"
+            android:hint="Email"
+            android:layout_weight="1"
+            android:layout_alignLeft="@+id/email_editprofil0" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5sp">
+        <com.example.azizainun.maps.MyTextView
+            android:id="@+id/rek_editprofil0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="No Rekening"
+            android:textStyle="bold"
+            android:layout_weight="2"
+            android:layout_alignBaseline="@+id/rek_editprofil1"
+            android:layout_alignBottom="@+id/rek_editprofil1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:id="@+id/rek_editprofil1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:gravity="right"
+            android:backgroundTint="@color/transparant"
+            android:inputType="textEmailAddress"
+            android:ems="13"
+            android:hint="No Rekening"
+            android:layout_weight="1"
+            android:layout_alignLeft="@+id/rek_editprofil0" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5sp">
+        <com.example.azizainun.maps.MyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="No Handphone"
+            android:textStyle="bold"
+            android:id="@+id/hp_editprofil0"
+            android:layout_weight="2"
+            android:layout_alignBaseline="@+id/hp_editprofil1"
+            android:layout_alignBottom="@+id/hp_editprofil1"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:id="@+id/hp_editprofil1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:gravity="right"
+            android:backgroundTint="@color/transparant"
+            android:inputType="textEmailAddress"
+            android:ems="13"
+            android:hint="Lahir"
+            android:layout_weight="1"
+            android:layout_alignLeft="@+id/hp_editprofil0" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5sp">
+        <com.example.azizainun.maps.MyTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Deskripsi"/>
+
+        <EditText
+            android:id="@+id/deskripsi"
+            android:paddingTop="30dp"
+            android:backgroundTint="@android:color/black"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textMultiLine"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:background="@drawable/ripple_button_normal"
+        android:layout_height="50dp"
+        android:id="@+id/simpan_editprofil"
+        android:gravity="center"
+        android:textSize="8pt"
+        android:textStyle="bold"
+        android:text="SIMPAN"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>

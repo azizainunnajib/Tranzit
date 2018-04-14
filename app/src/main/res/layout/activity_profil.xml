@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/tema">
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/profil"
+        android:clickable="true"
+        android:layout_weight="1">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/gambar_profil"
+            android:layout_width="100sp"
+            android:src="@drawable/sukses"
+            android:background="@color/dracula_primary_dark"
+            android:layout_height="100sp"
+            android:layout_centerInParent="true" />
+        <com.example.azizainun.maps.MyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:id="@+id/nama_profil"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:layout_below="@+id/gambar_profil"
+            android:gravity="center"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+        <com.example.azizainun.maps.MyTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sentuh untuk edit profil"
+            android:textSize="5pt"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"/>
+    </RelativeLayout>
+    <com.example.azizainun.maps.MyTextView
+        android:id="@+id/kelola_tempat"
+        android:layout_width="match_parent"
+        android:layout_height="53sp"
+        android:background="@drawable/ripple_button_normal"
+        android:hint="Kelola Tempat Sewa"
+        android:gravity="center"/>
+    <com.example.azizainun.maps.MyTextView
+        android:id="@+id/setting"
+        android:layout_width="match_parent"
+        android:layout_height="53sp"
+        android:hint="Setting"
+        android:background="@drawable/ripple_button_normal"
+        android:gravity="center"/>
+    <com.example.azizainun.maps.MyTextView
+        android:id="@+id/bantuan"
+        android:layout_width="match_parent"
+        android:layout_height="53sp"
+        android:hint="Bantuan"
+        android:background="@drawable/ripple_button_normal"
+        android:gravity="center"/>
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"/>
+
+</LinearLayout>
