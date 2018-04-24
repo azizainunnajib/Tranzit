@@ -48,6 +48,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:11.8.0'
     implementation 'com.google.firebase:firebase-storage:11.8.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.michaelmuenzer.android:ScrollableNumberPicker:0.2.2'
 
     /*//  <----- android component architecture ------>
     // ViewModel and LiveData

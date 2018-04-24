@@ -73,12 +73,13 @@
             android:layout_weight="1"
             android:textSize="10pt"
             android:text="Jumlah Tamu"/>
-        <NumberPicker
+        <com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker
             android:id="@+id/tamu_picker"
             android:layout_width="match_parent"
-            android:layout_height="35dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:textSize="12pt"/>
+
     </LinearLayout>
 
     <LinearLayout

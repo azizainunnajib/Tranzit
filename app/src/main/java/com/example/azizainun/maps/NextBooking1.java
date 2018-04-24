@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.NumberPicker;
 
 import com.google.firebase.database.DatabaseReference;
+import com.michaelmuenzer.android.scrollablennumberpicker.ScrollableNumberPicker;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -21,6 +22,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
+import static com.example.azizainun.maps.User.mFirebaseDatabase;
 import static com.example.azizainun.maps.User.mFirebaseInstance;
 
 
@@ -29,7 +31,7 @@ import static com.example.azizainun.maps.User.mFirebaseInstance;
  */
 public class NextBooking1 extends Fragment implements View.OnClickListener {
     MyTextView harga, tanggal;
-    NumberPicker tamu_picker;
+    ScrollableNumberPicker tamu_picker;
     EditText nama_wakil;
     Button confirm_book;
     String UID, nama_tempat;
@@ -66,10 +68,7 @@ public class NextBooking1 extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View v) {
-//        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
         Map<String, Object> childUpdates = new HashMap<>();
-        childUpdates.put("/users/" + UID, Sdate);
-        childUpdates.put("/dates/", Sdate );
         Log.d(TAG, "onClick: date" + Sdate.get(1));
         Log.d(TAG, "onClick: " +UID);
         String uid = User.getUID();
@@ -77,7 +76,18 @@ public class NextBooking1 extends Fragment implements View.OnClickListener {
         User.setUID();
         uid = User.getUID();
         Log.d(TAG, "onClick: 2" + uid);
-        final DatabaseReference pushbooked = mFirebaseInstance.getInstance().getReference().child("User/" + User.getUID() + "/Booked/" + nama_tempat);
+        DatabaseReference pushbooked = mFirebaseInstance.getInstance().getReference().child("User/" + uid + "/Booked/");
+        String key = pushbooked.push().getKey();
+        ModelBooked modelBooked = new ModelBooked();
+        modelBooked.setBooked(nama_tempat);
+        modelBooked.setWas_Booking(uid);
+        modelBooked.setBookedBy(UID);
+        modelBooked.setStatus("pending");
+        modelBooked.setDate(Sdate);
+        modelBooked.setHarga("harga");
+        modelBooked.setNama_wakil("nama wakil");
+        modelBooked.setJumlah_tamu(4);
+        childUpdates.put(key, modelBooked );
         pushbooked.updateChildren(childUpdates);
     }
 }

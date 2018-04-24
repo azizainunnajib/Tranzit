@@ -25,6 +25,7 @@ import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -276,7 +277,7 @@ public class AddUnit7 extends Fragment implements OnMapReadyCallback,
                         public void onSuccess(Location location) {
                             Log.d(TAG, "onSuccess: masuk getdevice 2");
                             // Got last known location. In some rare situations this can be null.
-                            if (location != null) {
+                            if (location != null && !getArguments().containsKey("b")) {
                                 Log.d(TAG, "onSuccess: masuk getdevice 3");
                                 Long = location.getLongitude();
                                 GoogleMap m = Gmap;

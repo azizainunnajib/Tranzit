@@ -59,7 +59,9 @@
         </activity>
         <activity android:name=".IG_upload" />
         <activity android:name=".DetailGambar" />
-        <activity android:name=".BookingPage" />
+        <activity android:name=".BookingPage" >
+            android:windowSoftInputMode="stateVisible|adjustResize"
+        </activity>
     </application>
 
 </manifest>

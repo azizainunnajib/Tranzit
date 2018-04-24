@@ -48,7 +48,7 @@ public class BookingPage extends AppCompatActivity {
         nama_tempat = i.getExtras().getString("nama tempat");
         max_tamu = i.getExtras().getInt("max tamu");
         final ArrayList<Date> arrayList = new ArrayList<>();
-        try {
+        /*try {
             SimpleDateFormat dateformat = new SimpleDateFormat("dd-MM-yyyy");
             String strdate = "14-4-2018";
             String strdate2 = "16-4-2018";
@@ -67,7 +67,7 @@ public class BookingPage extends AppCompatActivity {
 
         } catch (ParseException e) {
             e.printStackTrace();
-        }
+        }*/
 
         calendar.init(lastYear.getTime(), nextYear.getTime(), Locale.getDefault()) //
                 .inMode(CalendarPickerView.SelectionMode.RANGE) //
