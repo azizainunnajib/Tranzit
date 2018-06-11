@@ -104,35 +104,36 @@ public class TrendingInstagram extends Fragment {
                 if(!data.hasChildren()) {
                     Toast.makeText(getContext(), "ini yang terakhir", Toast.LENGTH_SHORT).show();
                     currentPage--;
-                }
-                for (DataSnapshot snapshot:data.getChildren()) {
-                    String url= (String) snapshot.child("images/standard_resolution/url").getValue();
-                    Long id_location =  (Long) snapshot.child("location/id").getValue();
-                    Double lat = (Double) snapshot.child("location/latitude").getValue();
-                    Double longi = (Double) snapshot.child("location/longitude").getValue();
-                    String nama_location = (String) snapshot.child("location/name").getValue();
-                    String username_ig = (String) snapshot.child("user/username").getValue();
-                    String caption = (String) snapshot.child("caption/text").getValue();
-                    long key = (long) snapshot.child("key").getValue();
-                    Model_data_ig2 model_data_ig2 = new Model_data_ig2();
-                    model_data_ig2.setUrl(url);
-                    model_data_ig2.setId_location(id_location);
-                    model_data_ig2.setLat(lat);
-                    model_data_ig2.setLng(longi);
-                    model_data_ig2.setNama_lokasi(nama_location);
-                    model_data_ig2.setUsername_ig(username_ig);
-                    model_data_ig2.setCaption(caption);
-                    data_ig.add(model_data_ig2);
-                    Log.d(TAG, "onSuccess: urut " + String.valueOf(key));
-                }
-                recyclerView.setHasFixedSize(true);
+                } else {
+                    for (DataSnapshot snapshot:data.getChildren()) {
+                        String url= (String) snapshot.child("images/standard_resolution/url").getValue();
+                        Long id_location =  (Long) snapshot.child("location/id").getValue();
+                        Double lat = (Double) snapshot.child("location/latitude").getValue();
+                        Double longi = (Double) snapshot.child("location/longitude").getValue();
+                        String nama_location = (String) snapshot.child("location/name").getValue();
+                        String username_ig = (String) snapshot.child("user/username").getValue();
+                        String caption = (String) snapshot.child("caption/text").getValue();
+                        long key = (long) snapshot.child("key").getValue();
+                        Model_data_ig2 model_data_ig2 = new Model_data_ig2();
+                        model_data_ig2.setUrl(url);
+                        model_data_ig2.setId_location(id_location);
+                        model_data_ig2.setLat(lat);
+                        model_data_ig2.setLng(longi);
+                        model_data_ig2.setNama_lokasi(nama_location);
+                        model_data_ig2.setUsername_ig(username_ig);
+                        model_data_ig2.setCaption(caption);
+                        data_ig.add(model_data_ig2);
+                        Log.d(TAG, "onSuccess: urut " + String.valueOf(key));
+                    }
+                    recyclerView.setHasFixedSize(true);
 //                LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
-                mLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-                recyclerView.setLayoutManager(mLayoutManager);
-                if (data_ig.size() > 0 & recyclerView != null) {
-                    recyclerView.setAdapter(adapter);
-                    adapter.notifyDataSetChanged();
+                    mLayoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+                    recyclerView.setLayoutManager(mLayoutManager);
+                    if (data_ig.size() > 0 & recyclerView != null) {
+                        recyclerView.setAdapter(adapter);
+                        adapter.notifyDataSetChanged();
 //                    Log.d(TAG, "onSuccess: "+ data_ig.get(1).getKotakab());
+                    }
                 }
             }
 

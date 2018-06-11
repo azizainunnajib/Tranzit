@@ -28,7 +28,8 @@ public class Profil extends Fragment implements View.OnClickListener {
     MyTextView kelola_tempat_sewa;
     MyTextView setting;
     MyTextView bantuan;
-
+    private static final String TAG = "Profil";
+    
     protected FirebaseStorage storage = FirebaseStorage.getInstance();
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View provilView = inflater.inflate(R.layout.activity_profil,container, false);
@@ -52,6 +53,7 @@ public class Profil extends Fragment implements View.OnClickListener {
         pathstorage.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
             @Override
             public void onSuccess(Uri uri) {
+                Log.d(TAG, "onSuccess: ");
                 Glide.with(getContext())
                         .load(uri)
                         .asBitmap()
@@ -81,6 +83,7 @@ public class Profil extends Fragment implements View.OnClickListener {
                 startActivity(i1);
                 break;
             case R.id.kelola_tempat:
+//                Intent i2 = new Intent(getContext(), AddUnit0.class);
                 Intent i2 = new Intent(getContext(), AddUnit0.class);
                 startActivity(i2);
                 break;

@@ -21,25 +21,39 @@
             android:id="@+id/banner_slider1"
             android:layout_width="match_parent"
             android:layout_height="300sp" />
-        <com.example.azizainun.maps.MyTextView
-            android:id="@+id/text_judultempat"
+        <LinearLayout
+            android:id="@+id/lin_judul"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text=""
-            android:layout_below="@id/banner_slider1"
-            android:textSize="11pt"/>
+            android:orientation="horizontal"
+            android:layout_margin="20dp"
+            android:layout_below="@id/banner_slider1">
+            <com.example.azizainun.maps.MyTextView
+                android:id="@+id/text_judultempat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=""/>
+            <com.example.azizainun.maps.MyTextView
+                android:id="@+id/harga"
+                android:text="harga"
+                android:layout_weight="1"
+                android:gravity="end"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
         <View
             android:id="@+id/separator0"
             android:background="@color/colorPrimaryDark"
             android:layout_width = "fill_parent"
             android:layout_height="1dip"
-            android:layout_below="@id/text_judultempat"/>
+            android:layout_below="@id/lin_judul"/>
         <LinearLayout
             android:id="@+id/deskripsi1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_below="@id/text_judultempat">
+            android:layout_below="@id/lin_judul">
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/gambar_user"
                 android:layout_width="70sp"
@@ -178,15 +192,11 @@
                 android:layout_height="40dp"
                 android:layout_weight="1"
                 android:layout_marginStart="20sp"
+                android:textStyle="bold"
                 android:text="Fasilitas"
-                android:gravity="center_vertical"/>
-            <com.example.azizainun.maps.MyTextView
-                android:id="@+id/fasilitas"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:text=""/>
+                android:textColor="@color/wallet_holo_blue_light"
+                android:shadowColor="@color/dracula_primary_dark"
+                android:gravity="center"/>
 
         </LinearLayout>
 

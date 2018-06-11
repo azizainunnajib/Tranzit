@@ -47,6 +47,7 @@ class DetailUnit : AppCompatActivity(), OnMapReadyCallback {
     internal lateinit var mapView: MapView
     internal lateinit var namaTempat : String
     internal lateinit var Imax_tamu: Integer
+    internal lateinit var Sharga: String
     internal var lat: Double = 0.0
     internal var lng: Double = 0.0
     lateinit var googleMap: GoogleMap
@@ -95,6 +96,7 @@ class DetailUnit : AppCompatActivity(), OnMapReadyCallback {
 
         booking.setOnClickListener {
             val intent = Intent(this, BookingPage::class.java)
+            intent.putExtra("harga", Sharga)
             intent.putExtra("UID", UID)
             intent.putExtra("nama tempat", nama_tempat)
             intent.putExtra("max tamu", Imax_tamu)
@@ -104,6 +106,7 @@ class DetailUnit : AppCompatActivity(), OnMapReadyCallback {
     }
 
     private fun putData(model_detail: Model_Detail?) {
+        Sharga = model_detail!!.getHarga()
         text_judultempat.text = nama_tempat
         Glide
                 .with(this)
@@ -114,6 +117,7 @@ class DetailUnit : AppCompatActivity(), OnMapReadyCallback {
         lay_fasilitas.setOnClickListener {
             expand_fasilitas.toggle()
         }
+        harga.text = model_detail?.getHarga()
         tipe_tempat.text = model_detail?.getTipe_tempat()
         tipe_bangunan.text = model_detail?.getTipe_bangunan()
         nama_user.text = model_detail?.getJudul()

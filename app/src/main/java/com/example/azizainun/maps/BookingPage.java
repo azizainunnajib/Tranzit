@@ -18,10 +18,13 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.function.Predicate;
+import java.util.stream.IntStream;
 
 import static com.example.azizainun.maps.User.mFirebaseInstance;
 
@@ -31,6 +34,7 @@ public class BookingPage extends AppCompatActivity {
     String UID;
     String nama_tempat;
     Integer max_tamu;
+    SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
     private static final String TAG = "BookingPage";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,11 +77,36 @@ public class BookingPage extends AppCompatActivity {
                 .inMode(CalendarPickerView.SelectionMode.RANGE) //
                 .withSelectedDate(new Date())
                 .withHighlightedDates(arrayList);
+        calendar.setOnDateSelectedListener(new CalendarPickerView.OnDateSelectedListener() {
+            @Override
+            public void onDateSelected(Date date) {
+                List<Date> check_date = calendar.getSelectedDates();
+                ArrayList<String> Sdate = new ArrayList<>();
+                for (Date a: check_date) {
+                    String c = simpleDateFormat.format(a.getTime());
+                    Sdate.add(c);
+                }
+                ArrayList<String> Adate = new ArrayList<>();
+                Adate.add("20180614");
+                Adate.add("20180617");
+                Log.d(TAG, "onDateSelected: masuk on selected");
+                if (!Collections.disjoint(Sdate, Adate)) {
+                    Log.d(TAG, "onDateSelected: Sdata: " + Sdate);
+                    Log.d(TAG, "onDateSelected: Adata: " + Adate);
+                    Log.d(TAG, "onDateSelected: masuk Sdata Adate");
+                }
+                
+            }
+
+            @Override
+            public void onDateUnselected(Date date) {
+
+            }
+        });
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMdd");
                 Log.d("list",  calendar.getSelectedDates().toString());
                 Log.d(TAG, "onClick: " + UID);
                 Log.d(TAG, "onClick: " + nama_tempat);
