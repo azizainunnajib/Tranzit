@@ -84,12 +84,14 @@ public class Profil extends Fragment implements View.OnClickListener {
                 break;
             case R.id.kelola_tempat:
 //                Intent i2 = new Intent(getContext(), AddUnit0.class);
-                Intent i2 = new Intent(getContext(), AddUnit0.class);
+                Intent i2 = new Intent(getContext(), KelolaTempatSewa.class);
                 startActivity(i2);
                 break;
             case R.id.setting:
                 break;
             case R.id.bantuan:
+                Intent i3 = new Intent(getContext(), Bantuan.class);
+                startActivity(i3);
                 break;
 
         }

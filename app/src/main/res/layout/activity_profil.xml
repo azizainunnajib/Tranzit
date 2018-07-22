@@ -16,7 +16,7 @@
             android:id="@+id/gambar_profil"
             android:layout_width="100sp"
             android:src="@drawable/foto_person"
-            android:background="@color/dracula_primary_dark"
+            android:background="@color/transparant"
             android:layout_height="100sp"
             android:layout_centerInParent="true" />
         <com.example.azizainun.maps.MyTextView
@@ -51,7 +51,8 @@
         android:layout_height="53sp"
         android:hint="Setting"
         android:background="@drawable/ripple_button_normal"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:visibility="gone"/>
     <com.example.azizainun.maps.MyTextView
         android:id="@+id/bantuan"
         android:layout_width="match_parent"

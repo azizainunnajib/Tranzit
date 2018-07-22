@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_margin="3dp"
-    android:layout_marginBottom="25dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="@color/tema"
     android:id="@+id/card_view"
     app:cardCornerRadius="5dp">
 
@@ -45,8 +46,9 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="55dp"
+            android:layout_height="65dp"
             android:layout_weight="1"
+            android:paddingBottom="10dp"
             android:weightSum="3"
             android:layout_gravity="center|right"
             android:background="@color/putih_trans"

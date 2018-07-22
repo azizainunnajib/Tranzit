@@ -62,7 +62,8 @@
         <activity android:name=".BookingPage">
             android:windowSoftInputMode="stateVisible|adjustResize"
         </activity>
-        <activity android:name=".KelolaTempatSewa"></activity>
+        <activity android:name=".KelolaTempatSewa" />
+        <activity android:name=".Bantuan"></activity>
     </application>
 
 </manifest>
